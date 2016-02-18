@@ -223,12 +223,10 @@ typedef NS_OPTIONS(NSUInteger, FBSDKServerConfigurationManagerAppEventsFeatures)
   // the server to respond.
   static FBSDKServerConfiguration *_defaultServerConfiguration = nil;
   if (![_defaultServerConfiguration.appID isEqualToString:appID]) {
-    BOOL useNativeFlow = YES;
     // Also enable SFSafariViewController by default.
     NSDictionary *dialogFlows = @{
                                   FBSDKDialogConfigurationNameDefault: @{
-                                      FBSDKDialogConfigurationFeatureUseNativeFlow: @(useNativeFlow),
-                                      FBSDKDialogConfigurationFeatureUseSafariViewController: @YES,
+                                      FBSDKDialogConfigurationFeatureUseNativeFlow: @YES,
                                       },
                                   FBSDKDialogConfigurationNameMessage: @{
                                       FBSDKDialogConfigurationFeatureUseNativeFlow: @YES,
